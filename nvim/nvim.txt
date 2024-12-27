@@ -1,0 +1,133 @@
+Comandos VIM:
+	Command mode:
+
+		: -> cmd line
+		d <num> d : corta linea
+		y<num>y : pega en linea
+		:/texto : buscar texto
+			n : adelante
+			N : Atras
+	
+	Normal mode:
+	
+		Dividir ventanas:
+			ctrl + w - jklh : moverse entre ventanas
+			ctrl + w - v : division vertical
+			ctrl + w - s : division horizontal
+			ctrl + w - +-<>= : aumentar , disminuir , igualar tamaño de ventanas
+			
+		Space + e : atras archivos/directorio
+		Space + f + f : Buscar archivo
+		p : pega abajo
+		P : pega linea arriba
+		y : copia
+		yy : copia linea
+		u : deshacer cambio
+		ctrl + r : volver al cambio
+		gg : mover al inicio
+		G : mover al final
+		wa : guardar todos los archivos
+		0 : principio de linea
+		$ : final de linea
+		e : fin palabra
+		ge | B : devolverse e
+		w : inicio palabra
+		ctrl + D : mitad de pantalla
+		shift + { : saltamos entre llaves
+		
+	Insert mode:
+
+		A : barra adelante (normal to insert)
+		i : barra atras (normal to insert)
+		r : replace (normal to insert)
+		C : borra (normal to insert)
+		o : crea linea abajo (normal to insert)
+		O : crea linea arriba (normal to insert)
+		ctrl + w : borra ultima palabra
+		ctrl + u : borra toda la linea
+
+	Visual mode:
+		
+		shift + v : v-line mode
+		ctrl + v : v-block mode
+			shift + i : manda al inicio --> escribimos en todo el bloque
+		d : borrar selecion
+		c : cambiar seleccionado (visual to insert)
+		cc : cambiar toda la linea
+		
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+HarleyLara:
+
+	Config / Base.lua:
+		----> ver lo de copypaste con portapapeles
+		leader key : space
+		buscar palabras : (modo comando) /palabra --> esc desactiva coincidencias
+		diagnosticos : 
+			Previo : [d
+			Siguiente: ]d
+			Mostrar lista : space +  e
+			Quick fix : space + q
+			
+
+	Keybindings / Keymaps.lua:
+		
+		leader key : space
+		atras : leader + e
+		cargar archivo lua: '' (dos comillas seguidas)
+		replace : leader + s
+		move selection (modo visual) : ctrl + j (abajo) , ctrl + k (arriba)
+		move screen (modo normal): ctrl + u (arriba) , ctrl + d (abajo)  --> los dos + zz centra pantalla en linea actual
+	
+Plugins:
+	Init: colorscheme , vimtex , markdown preview.
+
+	autopairs : para poner parentesis juntos , tambien esta autotag para <> de html o xml
+	
+	Comment : Comentar lineas:
+		comentar/descomentar (n-mode) : gcc --> linea actual
+		"" (v-mode) : gc --> lineas seleccionadas
+		"" (n-mode) : gbc --> bloques ({})
+	
+	Harpoon: Lista de archivos marcados
+		Añadir a lista : space + ha
+		Abrir lista : space + hl
+		Navegar por lista : space + 1..6
+	
+	Lsp:
+		ver documentacion : shift + K
+		ir a la definicion : gd
+		ir a la referencia : gr
+		ir a la implementacion : gI
+		type definition : space + d
+		document symbols :  space + ds
+		Rename : space + rn
+		code action : space + ca
+		go to declaration : gD
+	
+	Ros: Desactivado
+	
+	Telescope : 
+		Buscar archivos : space + ff
+		Buscar dentro del directorio : ctrl + f
+		Buscar ayudas : space + hh
+		Buscar citas ¿? : space + fz --> saque insta
+		Buscar dotfiles ¿? : space + fd
+	
+	Cmp : 
+		Navegar entre recomendaciones : ctrl + k (previo), ctrl + j (siguiente)
+		desplazar documentacion : ctrl + b ,ctrl + f 
+		iniciar autocompletacion : ctrl + space
+		aborta autocompletacion : ctrl + e
+		acepta " : CR
+		
+	Fugitive | Neogit : 
+		Neogit open : space + g
+	
+	Lualine : barra de abajo en nvim
+	
+	Surround : Poner texto seleccionado en parentesis, comillas, etc.
+		Funcionamieto : shift + s + " o ( o '
+	
+	Treesitter : Indentacion precisa, soporte para lenguajes y resaltado de syntaxis
+	 		
