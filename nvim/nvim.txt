@@ -93,6 +93,7 @@ Plugins:
 		Añadir a lista : space + ha
 		Abrir lista : space + hl
 		Navegar por lista : space + 1..6
+		
 	
 	Lsp:
 		ver documentacion : shift + K

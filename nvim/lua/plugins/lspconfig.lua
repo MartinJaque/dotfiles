@@ -34,22 +34,22 @@ return {
         capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
         local servers = {
-            tsserver = {},
+            -- tsserver = {},
 
             pyright = {},
 
-            tailwindcss = {},
-
-            astro = {},
-
-            gopls = {},
+            -- tailwindcss = {},
+            --
+            -- astro = {},
+            --
+            -- gopls = {},
 
             clangd = {
                 cmd = { "clangd", "--header-insertion=never"},
                 filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" }
             },
 
-            cmake = {},
+            -- cmake = {},
 
             texlab = {},
 
@@ -58,7 +58,7 @@ return {
             },
 
             lua_ls = {
-                cmd = { "/home/" .. vim.env.USER .. "/tooling/sumneko/bin/lua-language-server" },
+                -- cmd = { "/home/" .. vim.env.USER .. "/tooling/sumneko/bin/lua-language-server" },
                 settings = {
                     Lua = {
                         runtime = { version = 'LuaJIT' },
@@ -91,6 +91,7 @@ return {
         }
 
         local ensure_installed = vim.tbl_keys(servers or {})
+
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
         require('mason-lspconfig').setup {

@@ -132,6 +132,7 @@ source /opt/ros/humble/setup.zsh
 # Configure ROS 2 and colcon for argcomplete
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
 alias el='eval "$(register-python-argcomplete3 ros2)"'
+alias sl='source install/setup.zsh && eval "$(register-python-argcomplete3 ros2)"'
 
 # Lacoro 24
 export ROBOT_NAME="skratch"
@@ -141,3 +142,22 @@ alias lss_update="cd ~/lss_ws/src/lacoro-2024-ros-workshop && git pull origin ma
 # NVIM
 export PATH=$PATH:/usr/local/nvim-linux64/bin
 alias vi='nvim'
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] || [[ $KEYMAP = '' ]] || [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# Start with beam shape cursor on zsh startup and after every command.
+zle-line-init() { zle-keymap-select 'beam'}
+
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
