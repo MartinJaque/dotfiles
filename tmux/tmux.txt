@@ -1,0 +1,19 @@
+
+ctrl + x --> prefix
+
+Paneles:
+
+	ctrl + x % --> dividir panel en vertical
+	ctrl + x " --> dividir panel en horizontal 
+	prefix + alt + arrow --> modificar largo/ancho de paneles
+	prefix + arrow --> navegar entre paneles
+	
+Ventanas:
+	prefix + c --> crear nueva ventana
+	prefix + num ventana --> moverse a la ventana correspondiente
+	prefix + n/p --> moverse a la ventana siguiente o anterior
+	prefix + & --> cerrar ventana actual
+	prefix + , --> rename ventana actual
+	
+Sesiones:
+	

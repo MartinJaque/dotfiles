@@ -77,7 +77,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git
+    sudo
+    zsh-syntax-highlighting
+    zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,6 +136,9 @@ source /opt/ros/humble/setup.zsh
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
 alias el='eval "$(register-python-argcomplete3 ros2)"'
 alias sl='source install/setup.zsh && eval "$(register-python-argcomplete3 ros2)"'
+alias lrbg='ros2 launch rosbot_gazebo simulation.launch.py'
+alias sc='source install/setup.zsh && ros2 run navigation circleSMC'
+alias sc2='source install/setup.zsh && ros2 run navigation cuadradoSMC'
 
 # Lacoro 24
 export ROBOT_NAME="skratch"
