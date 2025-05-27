@@ -117,7 +117,6 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Custom Aliases
-# Manual aliases
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
@@ -136,9 +135,9 @@ source /opt/ros/humble/setup.zsh
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
 alias el='eval "$(register-python-argcomplete3 ros2)"'
 alias sl='source install/setup.zsh && eval "$(register-python-argcomplete3 ros2)"'
-alias lrbg='ros2 launch rosbot_gazebo simulation.launch.py'
-alias sc='source install/setup.zsh && ros2 run navigation circleSMC'
-alias sc2='source install/setup.zsh && ros2 run navigation cuadradoSMC'
+# alias lrbg='ros2 launch rosbot_gazebo simulation.launch.py robot_model:=rosbot'
+# alias sc='source install/setup.zsh && ros2 run navigation circleSMC'
+# alias sc2='source install/setup.zsh && ros2 run navigation cuadradoSMC'
 
 # Lacoro 24
 export ROBOT_NAME="skratch"
@@ -146,8 +145,10 @@ alias lss_dir="cd ~/lss_ws/src/lacoro-2024-ros-workshop"
 alias lss_update="cd ~/lss_ws/src/lacoro-2024-ros-workshop && git pull origin main && ansible-playbook local.yml --ask-become -t developer"
 
 # NVIM
-export PATH=$PATH:/usr/local/nvim-linux64/bin
+export PATH=$PATH:/opt/nvim-linux-x86_64/bin
 alias vi='nvim'
+# Go
+export PATH=$PATH:/usr/local/go/bin
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {

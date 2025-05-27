@@ -15,18 +15,46 @@ return {
     -- },
 
     -- Color scheme 3
+    -- {
+    --     'navarasu/onedark.nvim',
+    --     lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    --     priority = 1000, -- make sure to load this before all the other start plugins
+    --     init = function ()
+    --         vim.g.onedark_style = "darker"
+    --     end,
+    --     config = function()
+    --         vim.cmd.colorscheme "onedark"
+    --     end,
+    -- },
+
     {
-        'navarasu/onedark.nvim',
+        'projekt0n/github-nvim-theme',
         lazy = false, -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
-        init = function ()
-            vim.g.onedark_style = "darker"
-        end,
         config = function()
-            vim.cmd.colorscheme "onedark"
+            vim.cmd.colorscheme "github_dark_high_contrast"
         end,
     },
 
+     -- {
+        -- 'jesseleite/nvim-noirbuddy',
+     --    dependencies = {
+     --        { 'tjdevries/colorbuddy.nvim' }
+     --    },
+     --    lazy = false,
+     --    priority = 1000,
+     --    opts = {
+     --        -- All of your `setup(opts)` will go here
+     --    },
+     --    config = function ()
+     --        require('noirbuddy').setup {
+     --            colors = {
+     --                primary = '#79C0FF',
+     --                background = "#000000"
+     --            },
+     --        }
+     --    end
+     -- },
 
     -- vimtex
     -- {

@@ -24,6 +24,7 @@ keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Lef
 -- lua and plugins
 keymap.set("n", "''", ":luafile %<CR>")
 
+
 -- cool thing for lsp
 -- Harley: check for this in the lsp config
 -- keymap.set("n", "K", vim.lsp.buf.hover)

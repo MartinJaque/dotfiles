@@ -42,7 +42,7 @@ return {
             --
             -- astro = {},
             --
-            -- gopls = {},
+            gopls = {},
 
             clangd = {
                 cmd = { "clangd", "--header-insertion=never"},

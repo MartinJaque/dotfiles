@@ -1,4 +1,8 @@
 Comandos VIM:
+    Manipulacion de archivos/ carpetas dentro de nvim:
+        % --> creamos archivo
+        D --> borramos carpeta/archivo
+        d --> nuevo directorio
 	Command mode:
 
 		: -> cmd line
@@ -132,3 +136,10 @@ Plugins:
 	
 	Treesitter : Indentacion precisa, soporte para lenguajes y resaltado de syntaxis
 	 		
+    Copilot-Chat: Chat de IA
+        Iniciar chat: space + cc
+        Enviar mensaje: enter
+        Cancelar chat: esc
+        Navegar mensajes: ctrl + j (siguiente), ctrl + k (anterior)
+        Aceptar sugerencia: tab
+        Rechazar sugerencia: ctrl + c
