@@ -2,11 +2,38 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+# bspc monitor -d I II III IV V VI VII VIII IX X
+# Configuración de monitores
+if xrandr | grep -w "DP-1 connected"; then
+    # Configurar ambas pantallas: eDP-1 (2880x1800) a la izquierda, DP-1 (1920x1080) a la derecha
+    xrandr --output DP-1 --primary --mode 1920x1080 --pos 1680x0 --rotate normal \
+           --output eDP-1 --mode 1680x1050 --pos 0x0 --rotate normal
+           # --output DP-1 --mode 1920x1080 --pos 2880x0 --rotate normal
+ 
+    echo "Xft.dpi: 96" > ~/.Xresources
+    xrdb -merge ~/.Xresources & # 96 dpi en xresources para que se vea bien
+
+    # Asignar escritorios a cada monitor
+    bspc monitor DP-1 -d II III IV
+    bspc monitor eDP-1  -d I
+else
+    # Solo laptop (eDP-1)
+    xrandr --output DP-1 --off \
+           --output eDP-1 --mode 2880x1800 --scale 1x1 --pos 0x0 --primary
+    
+    echo "Xft.dpi: 168" > ~/.Xresources
+    xrdb -merge ~/.Xresources & # 180 dpi en xresources para que se vea bien
+
+    bspc monitor eDP-1 -d I II III IV V VI
+    bspc monitor DP-1 -r  # Remover el monitor de bspwm si no está conectado
+    # para invertir el touch pad -->
+    # 1. xinput list
+    # 2. Buscar el id del touchpad
+    # 3. xinput set-prop <id> "libinput Natural Scrolling Enabled" 1
+fi
 
 bspc config border_width         2
-bspc config window_gap          12
-
+bspc config window_gap           6
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
@@ -16,9 +43,10 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-vmware-user-suid-wrapper &
-/usr/bin/feh --bg-fill /home/mjaque/Descargas/fondos/cyberpunk.jpg &
+# vmware-user-suid-wrapper &
+
+/usr/bin/feh --bg-fill /home/mjaque/Descargas/fondos/fondo.jpg &
 ~/.config/polybar/./launch.sh &
+/usr/local/bin/picom &
+# setxkbmap latam &
 xset r rate 190 55 &
-
-

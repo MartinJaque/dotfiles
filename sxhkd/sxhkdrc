@@ -4,8 +4,8 @@
 
 # terminal emulator
 super + Return
-	/opt/kitty/bin/kitty
-	
+	/home/mjaque/.local/bin/kitty
+
 # program launcher
 super + d
 	/usr/bin/rofi -show run
@@ -114,8 +114,14 @@ super + shift + {Left,Down,Up,Right}
 
 # Custom Resize
 super + alt + {Left,Down,Up,Right}
-	/home/mjaque/.config/bspwm/scripts/bspwm_resize {west,south,north,east}	
+	/home/mjaque/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
 
 # Open firefox
 super + shift + f
-	/usr/bin/firefox	
+	/usr/bin/brave-browser
+
+# Print
+#     scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
+#
+# shift + Print
+#     scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'

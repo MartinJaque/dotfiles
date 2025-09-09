@@ -70,7 +70,7 @@ HarleyLara:
 		diagnosticos : 
 			Previo : [d
 			Siguiente: ]d
-			Mostrar lista : space +  e
+			Mostrar lista errores: space +  f
 			Quick fix : space + q
 			
 
