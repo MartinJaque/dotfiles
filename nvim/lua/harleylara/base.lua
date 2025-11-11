@@ -28,7 +28,7 @@ vim.g.netrw_banner = 0
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = '80'
-vim.opt.wrap = false -- No Wrap lines
+vim.opt.wrap = true -- No Wrap lines
 
 -- Tab stuff
 vim.opt.expandtab = true
@@ -87,7 +87,7 @@ vim.filetype.add {
 }
 
 
--- Copilot Chat
-vim.keymap.set("n", "<leader>cc", function()
-  require("CopilotChat").toggle()
-end, { desc = "Abrir Copilot Chat" })
+-- -- Copilot Chat
+-- vim.keymap.set("n", "<leader>cc", function()
+--   require("CopilotChat").toggle()
+-- end, { desc = "Abrir Copilot Chat" })
