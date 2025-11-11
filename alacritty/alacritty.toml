@@ -4,7 +4,7 @@
 
 [window]
     decorations = "Full"
-    opacity = 0.98
+    opacity = 0.95
     dynamic_title = true
     decorations_theme_variant = "None"
 
