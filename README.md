@@ -7,3 +7,7 @@
 5. install and config tmux
 6. install and config alacritty
 gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys false
+### Para hacer un link simbolico
+```bash
+ln -s ~/dotfiles/<nombre_carpeta> ~/.config/<nombre_carpeta>
+```
