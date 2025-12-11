@@ -6,7 +6,7 @@ return {
             cpp = { "clang-format" },
             c = { "clang-format" },
             rust = { "rustfmt" },
-            go = { "gofmt" },
+            go = { "gofmt", "goimports" },
             cmake = { "gersemi" },
         },
         format_on_save = {

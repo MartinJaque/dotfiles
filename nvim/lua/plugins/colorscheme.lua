@@ -78,7 +78,7 @@ return {
                     }
                 end,
             })
-            require("kanagawa").load("dragon")
+            -- require("kanagawa").load("dragon")
             -- vim.cmd.colorscheme('kanagawa-dragon')
         end
     },
@@ -104,16 +104,29 @@ return {
         end,
     },
 
+    -- {
+    --     "navarasu/onedark.nvim",
+    --     -- priority = 1000, -- make sure to load this before all the other start plugins
+    --     lazy = true,
+    --     config = function()
+    --         require('onedark').setup {
+    --             style = 'warmer'
+    --         }
+    --         -- Enable theme
+    --         -- require('onedark').load()
+    --     end
+    -- },
     {
-        "navarasu/onedark.nvim",
-        -- priority = 1000, -- make sure to load this before all the other start plugins
-        lazy = true,
+        "olimorris/onedarkpro.nvim",
+        lazy = false,
+        priority = 1000, -- Ensure it loads first
         config = function()
-            require('onedark').setup {
-                style = 'warmer'
-            }
-            -- Enable theme
-            -- require('onedark').load()
+            require("onedarkpro").setup({
+                colors = {
+                    bg = "#16191D"
+                }
+            })
+            vim.cmd.colorscheme('onedark')
         end
     },
 }
