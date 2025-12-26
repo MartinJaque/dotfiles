@@ -78,8 +78,8 @@ return {
                     }
                 end,
             })
-            -- require("kanagawa").load("dragon")
-            -- vim.cmd.colorscheme('kanagawa-dragon')
+            require("kanagawa").load("dragon")
+            vim.cmd.colorscheme('kanagawa-dragon')
         end
     },
     -- {
@@ -116,6 +116,25 @@ return {
     --         -- require('onedark').load()
     --     end
     -- },
+    -- {
+    --     'jesseleite/nvim-noirbuddy',
+    --     dependencies = {
+    --         { 'tjdevries/colorbuddy.nvim' }
+    --     },
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {
+    --         -- All of your `setup(opts)` will go here
+    --     },
+    --     config = function()
+    --         require('noirbuddy').setup {
+    --             colors = {
+    --                 primary = '#79C0FF',
+    --                 background = "#000000"
+    --             },
+    --         }
+    --     end
+    -- },
     {
         "olimorris/onedarkpro.nvim",
         lazy = false,
@@ -126,7 +145,7 @@ return {
                     bg = "#16191D"
                 }
             })
-            vim.cmd.colorscheme('onedark')
+            -- vim.cmd.colorscheme('onedark')
         end
     },
 }
