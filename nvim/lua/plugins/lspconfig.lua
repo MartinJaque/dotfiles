@@ -27,16 +27,9 @@ return {
                 map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
                 map('K', vim.lsp.buf.hover, 'Hover Documentation')
                 map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-
-                -- Rust formatter on save
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
-                if client and client.name == "rust_analyzer" then
-                    vim.api.nvim_create_autocmd("BufWritePre", {
-                        buffer = event.buf,
-                        callback = function()
-                            vim.lsp.buf.format({ async = false })
-                        end,
-                    })
+                if client and client.server_capabilities.inlayHintProvider then
+                  vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
                 end
             end
         })
@@ -56,7 +49,6 @@ return {
                         checkOnSave = {
                             command = 'clippy'
                         },
-                        -- rustfmt = {},
                     },
                 },
             },

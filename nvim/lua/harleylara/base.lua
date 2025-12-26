@@ -22,13 +22,13 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '↵'}
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '↵' }
 
 vim.g.netrw_banner = 0
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = '80'
-vim.opt.wrap = true -- No Wrap lines
+vim.opt.wrap = false -- No Wrap lines
 
 -- Tab stuff
 vim.opt.expandtab = true
@@ -40,6 +40,12 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 
+-- color status line
+vim.cmd(":hi statusline guibg=NONE")
+
+-- format lsp
+-- vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -49,30 +55,25 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>f', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- vim.diagnostic.config({ virtual_text = true })
 
--- vim.o.updatetime = 250
--- vim.api.nvim_create_autocmd("CursorHold", {
---   callback = function()
---     vim.diagnostic.open_float(nil, { focus = false })
---   end,
--- })
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
 
 -- Change indexing for some filetypes
 vim.api.nvim_create_augroup('setIndent', { clear = true })
 vim.api.nvim_create_autocmd('Filetype', {
-  group = 'setIndent',
-  pattern = { 'xml', 'html', 'xhtml', "yml", "json", "css", "javascript", "typescript", "markdown", "mdx", "urdf"},
-  command = 'setlocal shiftwidth=2 tabstop=2'
+    group = 'setIndent',
+    pattern = { 'xml', 'html', 'xhtml', "yml", "json", "css", "javascript", "typescript", "markdown", "mdx", "urdf" },
+    command = 'setlocal shiftwidth=2 tabstop=2'
 })
 
 -- Set up custom filetypes
@@ -85,9 +86,3 @@ vim.filetype.add {
         xacro = "xml"
     },
 }
-
-
--- -- Copilot Chat
--- vim.keymap.set("n", "<leader>cc", function()
---   require("CopilotChat").toggle()
--- end, { desc = "Abrir Copilot Chat" })

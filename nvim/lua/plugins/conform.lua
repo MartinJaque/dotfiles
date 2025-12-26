@@ -11,7 +11,8 @@ return {
         },
         format_on_save = {
             timeout_ms = 500,
-            lsp_format = "fallback",
+            -- use Conform's formatter first; never defer to LSP
+            lsp_format = "never",
         },
 
     },

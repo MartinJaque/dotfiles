@@ -1,8 +1,8 @@
 return {
     {
         "rebelot/kanagawa.nvim",
-        lazy = false,
-        priority = 1000,
+        lazy = true,
+        -- priority = 1000,
         config = function()
             require("kanagawa").setup({
                 colors = {
@@ -78,8 +78,8 @@ return {
                     }
                 end,
             })
-            require("kanagawa").load("dragon")
-            vim.cmd.colorscheme('kanagawa-dragon')
+            -- require("kanagawa").load("dragon")
+            -- vim.cmd.colorscheme('kanagawa-dragon')
         end
     },
     -- {
@@ -116,29 +116,10 @@ return {
     --         -- require('onedark').load()
     --     end
     -- },
-    -- {
-    --     'jesseleite/nvim-noirbuddy',
-    --     dependencies = {
-    --         { 'tjdevries/colorbuddy.nvim' }
-    --     },
-    --     lazy = false,
-    --     priority = 1000,
-    --     opts = {
-    --         -- All of your `setup(opts)` will go here
-    --     },
-    --     config = function()
-    --         require('noirbuddy').setup {
-    --             colors = {
-    --                 primary = '#79C0FF',
-    --                 background = "#000000"
-    --             },
-    --         }
-    --     end
-    -- },
     {
         "olimorris/onedarkpro.nvim",
-        lazy = false,
-        priority = 1000, -- Ensure it loads first
+        lazy = true,
+        -- priority = 1000, -- Ensure it loads first
         config = function()
             require("onedarkpro").setup({
                 colors = {
@@ -146,6 +127,16 @@ return {
                 }
             })
             -- vim.cmd.colorscheme('onedark')
+        end
+    },
+    {
+        "vague-theme/vague.nvim",
+        lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other plugins
+        config = function()
+            require("vague").setup({
+            })
+            vim.cmd("colorscheme vague")
         end
     },
 }
