@@ -6,14 +6,9 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.mouse = 'a'
-vim.opt.showmode = false -- the mode is already in the status line
+vim.opt.showmode = true -- the mode is already in the status line
 
 vim.opt.clipboard = 'unnamedplus'
--- This disable clipboard,
--- for some reason it take long time to start
--- and I not using it
--- https://github.com/neovim/neovim/issues/14280#issuecomment-812854079
--- vim.cmd("let g:loaded_clipboard_provider=1")
 
 vim.opt.breakindent = true
 vim.opt.undofile = true
@@ -43,19 +38,11 @@ vim.opt.softtabstop = 4
 -- color status line
 vim.cmd(":hi statusline guibg=NONE")
 
--- format lsp
--- vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
-
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>f', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
--- vim.diagnostic.config({ virtual_text = true })
+-- diagnostic inline text
+vim.diagnostic.config({ virtual_text = true })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -79,9 +66,6 @@ vim.api.nvim_create_autocmd('Filetype', {
 -- Set up custom filetypes
 vim.filetype.add {
     extension = {
-        -- tex = "tex", -- Change file `.tex` from `plaintext` to just `tex`
-        astro = "astro",
-        mdx = "markdown.mdx",
         urdf = "xml",
         xacro = "xml"
     },
