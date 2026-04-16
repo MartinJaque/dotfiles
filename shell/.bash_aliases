@@ -11,3 +11,7 @@ alias catnl='/bin/bat --paging=never'
 
 alias vi='nvim'
 alias cd='z'
+alias ya='yazi'
+alias 7z='/usr/bin/7zz'
+# for qt6 in virtual enviroment of larsgui
+alias qt6='pyside6-designer'
