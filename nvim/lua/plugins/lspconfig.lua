@@ -6,7 +6,7 @@ vim.pack.add({
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('harley-lsp-attach', { clear = true }),
+    group = vim.api.nvim_create_augroup('lsp-attach-debug', { clear = true }),
     callback = function(event)
         local builtin = require('telescope.builtin')
 
@@ -34,7 +34,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
 local servers = {
-    pyright = {},
+    -- pyright = {},
+    basedpyright = {},
     ruff = {},
     rust_analyzer = {},
     gopls = {},

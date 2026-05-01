@@ -6,7 +6,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.mouse = 'a'
-vim.opt.showmode = true -- the mode is already in the status line
+vim.opt.showmode = false -- the mode is already in the status line
 
 vim.opt.clipboard = 'unnamedplus'
 
@@ -20,10 +20,11 @@ vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '↵' }
 
 vim.g.netrw_banner = 0
+vim.g.netrw_lifestyle = 3
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = '80'
-vim.opt.wrap = false -- No Wrap lines
+vim.opt.wrap = true -- No Wrap lines
 
 -- Tab stuff
 vim.opt.expandtab = true
@@ -42,7 +43,7 @@ vim.cmd(":hi statusline guibg=NONE")
 vim.opt.hlsearch = true
 
 -- diagnostic inline text
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({ virtual_text = false })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
