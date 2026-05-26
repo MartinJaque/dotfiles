@@ -19,8 +19,8 @@ ln -s ~/dotfiles/shell/.Xresources ~/.Xresources
 - xclip `sudo apt install xclip`
 1. Instalar desde .tar
   - 1.1 Descomprimir (7z) 2 veces
-  - 1.2 mv ~/Downloads/nvim.. ~/Downloads/nvim
-  - 1.3 mv ~/Downloads/nvim /opt/
+  - 1.2 `mv ~/Downloads/nvim.. ~/Downloads/nvim`
+  - 1.3 `mv ~/Downloads/nvim /opt/`
 2. Configuracion:
 ```bash
 ln -s ~/dotfiles/nvim ~/.config/nvim/
