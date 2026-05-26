@@ -176,7 +176,8 @@ setxkbmap latam
 eval "$(zoxide init bash)"
 export PATH="$PATH:$(go env GOPATH)/bin"
 
-# opencode
-export PATH=/home/mjaque/.opencode/bin:$PATH
 
 . "$HOME/.local/share/../bin/env"
+
+# opencode
+export PATH=/home/mjaque/.opencode/bin:$PATH
