@@ -12,6 +12,10 @@
       "rev": "c642487086dbd9a93160e1679a1327be111cbc25",
       "src": "https://github.com/hrsh7th/cmp-path"
     },
+    "copilot.lua": {
+      "rev": "61784cb7a1a109d72b9cb107ee70d11bc7d095ff",
+      "src": "https://github.com/zbirenbaum/copilot.lua"
+    },
     "gruber": {
       "rev": "aba065c3a79b58cc3863d5c9db319255abd1258a",
       "src": "https://github.com/blazkowolf/gruber-darker.nvim"
@@ -25,9 +29,21 @@
       "rev": "aef7f5cec0a40dbe7f3304214850c472e2264b10",
       "src": "https://github.com/rebelot/kanagawa.nvim"
     },
+    "lazygit.nvim": {
+      "rev": "a04ad0dbc725134edbee3a5eea29290976695357",
+      "src": "https://github.com/kdheepak/lazygit.nvim"
+    },
+    "live-server.nvim": {
+      "rev": "084d69b63610803c18ddd7541294d83ca748d1dc",
+      "src": "https://github.com/selimacerbas/live-server.nvim"
+    },
     "lualine.nvim": {
       "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "markdown-preview.nvim": {
+      "rev": "29234edae5b8b7db5ae05061ff7197f95ef0ffd5",
+      "src": "https://github.com/selimacerbas/markdown-preview.nvim"
     },
     "mason-lspconfig.nvim": {
       "rev": "0a3b42c3e503df87aef6d6513e13148381495c3a",
