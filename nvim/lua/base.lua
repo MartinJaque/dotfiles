@@ -24,7 +24,7 @@ vim.g.netrw_lifestyle = 3
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = '80'
-vim.opt.wrap = true -- No Wrap lines
+vim.opt.wrap = false -- No Wrap lines
 
 -- Tab stuff
 vim.opt.expandtab = true
