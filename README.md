@@ -15,9 +15,8 @@ ln -s ~/dotfiles/shell/.Xresources ~/.Xresources
 ```
 ## Nvim:
 0. Pre requisitos:
-- node
-- npm
-- xclip
+- node and npm [url](https://nodejs.org/en/download)
+- xclip `sudo apt install xclip`
 1. Instalar desde .tar
   - 1.1 Descomprimir (7z) 2 veces
   - 1.2 mv ~/Downloads/nvim.. ~/Downloads/nvim
