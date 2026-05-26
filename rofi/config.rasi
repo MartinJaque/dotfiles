@@ -1,2 +1,115 @@
-//@theme "/home/mjaque/.config/rofi/themes/squared-nord.rasi"
-@theme "/home/mjaque/.config/rofi/themes/squared-nord.rasi"
+configuration {
+    modes: "window,run,ssh,drun";
+    sorting-method: "normal";
+    show-icons: true;
+    matching: "regex";
+    drun-match-fields: "name";
+    display-run: "menu:";
+    display-ssh: "ssh:";
+    display-drun: "apps:";
+    display-window: "windows:";
+}
+
+@theme "/home/mjaque/.config/rofi/themes/tokyo.rasi"
+
+* {
+    font: "Iosevka 20";
+
+    background-color: transparent;
+    text-color: @fg0;
+
+    margin: 0px;
+    padding: 0px;
+    spacing: 0px;
+}
+
+window {
+    location: center;
+    width: 900;
+    y-offset: -20;
+
+    border-radius: 7px;
+    border: 1px;
+    border-color: rgba(65, 72, 104, 0.7);
+
+    background-color: rgba(26, 27, 38, 0.85);
+    blur: true;
+}
+
+mainbox {
+    padding: 1px;
+    background-color: #1a1a1a;
+}
+
+inputbar {
+    background-color: rgba(31, 35, 50, 0.85);
+    border-radius: 7px;
+    border: 1px;
+    border-color: rgba(65, 72, 104, 0.7);
+
+    padding: 8px 16px;
+    spacing: 8px;
+}
+
+prompt {
+    text-color: @cyan;
+    background-color: transparent;
+}
+
+entry {
+    text-color: @fg0;
+    placeholder: "search";
+    placeholder-color: @cyan;
+    background-color: transparent;
+}
+
+listview {
+    background-color: rgba(31, 35, 50, 0.85);
+    margin: 12px 0 0;
+    columns: 1;
+    lines: 8;
+    fixed-height: false;
+}
+
+element {
+    padding: 6px 2px;
+    spacing: 10px;
+    border-radius: 12px;
+    background-color: rgba(31, 35, 50, 0.85);
+}
+
+element normal urgent {
+    text-color: @red;
+}
+
+element normal active {
+    text-color: @blue;
+}
+
+element selected normal,
+element selected active {
+background-color: rgba(180, 190, 200, 0.16);
+}
+
+element-icon {
+    size: 1em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+    background-color: transparent;
+}
+
+message {
+    margin: 12px 0 0;
+    border-radius: 12px;
+    border: 1px;
+    border-color: rgba(65, 72, 104, 0.7);
+    background-color: rgba(31, 35, 50, 0.85);
+}
+
+textbox {
+    padding: 8px 24px;
+    background-color: rgba(31, 35, 50, 0.85);
+}
