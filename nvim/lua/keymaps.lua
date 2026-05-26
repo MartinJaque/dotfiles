@@ -42,6 +42,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         end
     end,
 })
+
 -- Telescope keymaps
 local builtin = require('telescope.builtin')
 
@@ -70,3 +71,11 @@ keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>")
 
 -- Neotree
 keymap.set("n", "<C-b>", "<cmd>Neotree toggle right<CR>")
+
+-- MarkdownPreview
+keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<cr>", { desc = "Markdown: Start preview" })
+keymap.set("n", "<leader>mps", "<cmd>MarkdownPreviewStop<cr>", { desc = "Markdown: Stop preview" })
+keymap.set("n", "<leader>mpr", "<cmd>MarkdownPreviewRefresh<cr>", { desc = "Markdown: Refresh preview" })
+
+-- Lazygit
+keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "Launch lazygit in nvim" })
