@@ -175,3 +175,15 @@ setxkbmap latam
 
 # Zoxide init
 eval "$(zoxide init bash)"
+
+# nvidia functions
+nv_on() {
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    echo "Nvidia GPU On"
+}
+nv_off() {
+    unset __NV_PRIME_RENDER_OFFLOAD
+    unset __GLX_VENDOR_LIBRARY_NAME
+    echo "Nvidia GPU Off"
+}
