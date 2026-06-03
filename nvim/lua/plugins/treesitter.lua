@@ -15,7 +15,7 @@ local ensure_installed = {
         'rust',
         'go',
         'markdown',
-        'markdown-inline',
+        'markdown_inline',
 
     }
 
@@ -23,7 +23,7 @@ require('nvim-treesitter').install(ensure_installed)
 
 vim.api.nvim_create_autocmd('FileType', {
     pattern = { 
-        'sh', 'bash', 'c', 'cpp', 'json', 'html', 'python', 'cmake', 'xml', 'rust' , 'go', 'markdown', 'markdown-inline',
+        'sh', 'bash', 'c', 'cpp', 'json', 'html', 'python', 'cmake', 'xml', 'rust' , 'go', 'markdown', 'markdown_inline',
     },
     callback = function()
         vim.treesitter.start()
