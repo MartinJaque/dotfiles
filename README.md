@@ -53,9 +53,21 @@ ln -s ~/dotfiles/rofi ~/.config/rofi/
 1. Just perfection
 2. PaperWM
 3. SpaceBar
+
 Command for unable the dash shortcut with cmd + nums `gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys false`
-### To do a symbolic link
+
+## Notas
+To do a symbolic link
 ```bash
 ln -s ~/dotfiles/<folder_to> ~/.config/<folder_from>
 ```
 **Nota**: La carpeta de destino no debe existir previamente
+
+Comando para obligar a 2.4Ghz:
+```bash
+nmcli connection modify "guest" 802-11-wireless.band bg
+```
+Comando para sacar el case sensitive de bash:
+```bash
+echo set completion-ignore-case on | sudo tee -a /etc/inputrc
+```
