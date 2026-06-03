@@ -1,7 +1,6 @@
 
 local keymap = vim.keymap
 
-keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- move selection
 keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
@@ -66,9 +65,6 @@ keymap.set("n", "<A-4>", function() harpoon:list():select(4) end)
 keymap.set("n", "<A-5>", function() harpoon:list():select(5) end)
 keymap.set("n", "<A-6>", function() harpoon:list():select(6) end)
 
--- ZenMode
-keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>")
-
 -- Neotree
 keymap.set("n", "<C-b>", "<cmd>Neotree toggle right<CR>")
 
@@ -79,3 +75,6 @@ keymap.set("n", "<leader>mpr", "<cmd>MarkdownPreviewRefresh<cr>", { desc = "Mark
 
 -- Lazygit
 keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "Launch lazygit in nvim" })
+
+-- Oil
+keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" })
