@@ -9,8 +9,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false -- the mode is already in the status line
 
 vim.opt.clipboard = 'unnamedplus'
-
-vim.opt.breakindent = true
+vim.keymap.set("x", "p", '"_dP')
 vim.opt.undofile = true
 
 vim.opt.ignorecase = true
@@ -19,12 +18,22 @@ vim.opt.smartcase = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '↵' }
 
+-- Nuevo
+vim.opt.signcolumn = "yes"
+vim.opt.termguicolors = true
+vim.opt.sidescrolloff = 8
+vim.opt.splitkeep = "screen"
+vim.opt.incsearch = true
+vim.opt.updatetime = 200
+vim.opt.timeoutlen = 400
+vim.opt.inccommand = "split"
+
 vim.g.netrw_banner = 0
-vim.g.netrw_lifestyle = 3
+vim.g.netrw_liststyle = 3
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = '80'
-vim.opt.wrap = false -- No Wrap lines
+vim.opt.wrap = true
 
 -- Tab stuff
 vim.opt.expandtab = true
@@ -36,18 +45,24 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 
+-- Diagnostics
+vim.diagnostic.config({
+    signs = true,
+})
+
+vim.diagnostic.config({
+  signs = true,
+  underline = true,
+  virtual_text = { current_line = true },
+})
+
 -- color status line
 vim.cmd(":hi statusline guibg=NONE")
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
--- diagnostic inline text
-vim.diagnostic.config({ virtual_text = false })
-
 -- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight when yanking (copying) text',
     group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
@@ -56,18 +71,25 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
--- Change indexing for some filetypes
-vim.api.nvim_create_augroup('setIndent', { clear = true })
-vim.api.nvim_create_autocmd('Filetype', {
-    group = 'setIndent',
-    pattern = { 'xml', 'html', 'xhtml', "yml", "json", "css", "javascript", "typescript", "markdown", "mdx", "urdf" },
-    command = 'setlocal shiftwidth=2 tabstop=2'
+-- -- Change indexing for some filetypes
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("setIndent", { clear = true }),
+  pattern = {
+    "xml","html","xhtml","yaml","json","jsonc","css","javascript","typescript",
+    "markdown","markdown.mdx","urdf","lua","cpp",
+  },
+  callback = function()
+    vim.opt_local.shiftwidth  = 2
+    vim.opt_local.tabstop     = 2
+    vim.opt_local.softtabstop = 2
+  end,
 })
 
 -- Set up custom filetypes
 vim.filetype.add {
     extension = {
         urdf = "xml",
-        xacro = "xml"
+        xacro = "xml",
+        sdf = "xml",
     },
 }

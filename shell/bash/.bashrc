@@ -111,9 +111,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#================
-#= Martin Jaque =
-#================
+#=================
+#=   personal    =
+#=================
 
 #==============Open tmux==============
 if [ -n "$TERM" ] && [[ "$TERM" != "screen" ]]; then
@@ -163,6 +163,8 @@ export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 # For editor default in yazi
 export EDITOR=nvim
+
+# export ROS_DOMAIN_ID=19
 
 # pnpm
 export PNPM_HOME="/home/mjaque/.local/share/pnpm"

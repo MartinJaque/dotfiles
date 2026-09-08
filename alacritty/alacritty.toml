@@ -21,4 +21,4 @@ general.import = [
     save_to_clipboard=true
 
 [cursor]
-    style={shape="Beam", blinking= "On"}
+    style={shape="Block", blinking= "On"}

@@ -10,6 +10,7 @@ require('lualine').setup({
         section_separators = { left = '|', right = '|'},
     },
     sections = {
+        lualine_b = {'branch', 'diff', 'diagnostics'},
         lualine_x = {'filetype'},
         lualine_y = {},
     },

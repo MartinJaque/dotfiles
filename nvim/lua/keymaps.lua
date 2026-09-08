@@ -1,6 +1,4 @@
-
 local keymap = vim.keymap
-
 
 -- move selection
 keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
@@ -23,12 +21,6 @@ keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnosti
 keymap.set('n', '<leader>f', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- vim.api.nvim_create_autocmd("BufWritePre", {
---     pattern = "*",
---     callback = function()
---         vim.lsp.buf.format()
---     end,
--- })
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
     callback = function(args)
@@ -43,12 +35,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- Telescope keymaps
-local builtin = require('telescope.builtin')
+-- local builtin = require('telescope.builtin')
 
-keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[f]ind [f]ile in the current directory and children'})
-keymap.set('n', '<C-f>', builtin.current_buffer_fuzzy_find, { desc = 'Search into the current buffer'})
-keymap.set('n', '<leader>hh', builtin.help_tags, { desc = '[h]elp [h]elp'})
+-- keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[f]ind [f]ile in the current directory and children'})
+-- keymap.set('n', '<C-f>', builtin.current_buffer_fuzzy_find, { desc = 'Search into the current buffer'})
+-- keymap.set('n', '<leader>hh', builtin.help_tags, { desc = '[h]elp [h]elp'})
 
+keymap.set('n', '<leader>ff', require('fzf-lua').files, { desc = '[f]ind [f]ile in the current directory and children'})
+keymap.set('n', '<C-f>', require('fzf-lua').live_grep , { desc = 'Search into the current buffer'})
 
 -- Harpoon keymaps
 local harpoon = require("harpoon")
