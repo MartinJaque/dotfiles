@@ -5,6 +5,6 @@
   - Space Bar
 2. Load configs:
 ```bash
-dconf load /org/gnome/shell/extensions/ < extensiones.conf
+dconf load /org/gnome/shell/extensions/ < config.ini
 ```
 3. Disable ubuntu dock
