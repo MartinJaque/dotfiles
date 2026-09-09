@@ -7,13 +7,13 @@ general.import = [
 
 
 [window]
-    decorations = "None"
+    decorations = "Full"
     opacity = 0.95
     dynamic_title = true
     decorations_theme_variant = "None"
 
 [font]
-    normal = { family="Iosevka", style="Regular" }
+    normal = { family="Iosevka Nerd Font Mono", style="Regular" }
     size = 13
 
 
@@ -22,3 +22,4 @@ general.import = [
 
 [cursor]
     style={shape="Block", blinking= "On"}
+

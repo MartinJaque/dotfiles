@@ -8,7 +8,7 @@ git clone https://github.com/MartinJaque/dotfiles ~/.
 ```bash
 ln -s ~/dotfiles/shell/bash/.bashrc ~/.bashrc
 ln -s ~/dotfiles/shell/bash/.bash_aliases ~/.bash_aliases
-ln -s ~/dotfiles/shell/bash/.bash_completion/ ~/.bash_completion/
+ln -s ~/dotfiles/shell/bash/.bash_completion/ ~/.bash_completion
 ln -s ~/dotfiles/shell/.profile ~/.profile
 ln -s ~/dotfiles/shell/.pam_environment ~/.pam_environment
 ln -s ~/dotfiles/shell/.Xresources ~/.Xresources
@@ -17,19 +17,21 @@ ln -s ~/dotfiles/shell/.Xresources ~/.Xresources
 0. Prerequisites:
 - node and npm [url](https://nodejs.org/en/download)
 - xclip `sudo apt install xclip`
+- python-venv, pip
+- go (lsp)
 1. Install from .tar
   - 1.1  Decompress 2 times (7z)
   - 1.2 `mv ~/Downloads/nvim.. ~/Downloads/nvim`
   - 1.3 `mv ~/Downloads/nvim /opt/`
 2. Configuration:
 ```bash
-ln -s ~/dotfiles/nvim ~/.config/nvim/
+ln -s ~/dotfiles/nvim ~/.config/nvim
 ```
 ## alacritty
 1. Install from the [src](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
 2. Configuration:
 ```bash
-ln -s ~/dotfiles/alacritty/ ~/.config/alacritty/
+ln -s ~/dotfiles/alacritty/ ~/.config/alacritty
 ```
 ## Tmux:
 1. Installation:
@@ -38,7 +40,7 @@ sudo apt install tmux
 ```
 2. Configuration:
 ```bash
-ln -s ~/dotfiles/tmux/ ~/.config/tmux/
+ln -s ~/dotfiles/tmux/ ~/.config/tmux
 ```
 ## Rofi
 1. Installation
@@ -47,12 +49,11 @@ sudo apt install rofi
 ```
 2. Configuration
 ```bash
-ln -s ~/dotfiles/rofi ~/.config/rofi/
+ln -s ~/dotfiles/rofi ~/.config/rofi
 ```
 ## Gnome extensions:
 1. Just perfection
 2. PaperWM
-3. SpaceBar
 
 Command for unable the dash shortcut with cmd + nums `gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys false`
 

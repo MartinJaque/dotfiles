@@ -1,6 +1,9 @@
+# Plugins
 1. bat : https://github.com/sharkdp/bat
 2. lsd : https://github.com/lsd-rs/lsd
 3. fzf : https://github.com/junegunn/fzf
+## ZSH plugins only
 4. zsh-autosuggestions : https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
 4. zsh-syntax-highlighting : https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-5. sudo : sudo 
+5. sudo : sudo
+

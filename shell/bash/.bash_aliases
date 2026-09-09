@@ -1,4 +1,3 @@
-
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
@@ -8,8 +7,7 @@ alias cat='/bin/bat'
 alias catn='/bin/cat'
 alias catnl='/bin/bat --paging=never'
 
-
 alias vi='nvim'
 alias cd='z'
 alias ya='yazi'
-alias 7z='/usr/bin/7zz'
+alias 7z='$HOME/.local/bin/7zz'
